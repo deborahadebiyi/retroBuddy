@@ -7,17 +7,17 @@ const app = express();
 
 dotenv.config();
 
+//routes
+const userRoute = require("./routes/users");
+const authRoute = require("./routes/auth");
+
 //middleware
-//body parser to parse requests
 app.use(express.json());
 app.use(helmet());
 app.use(morgan("common"));
 
-
-//routes
-app.get("/", (req, res) => {
-    res.send("Let's get retrospective!");
-})
+app.use("/users", userRoute)
+app.use("/auth", authRoute)
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
