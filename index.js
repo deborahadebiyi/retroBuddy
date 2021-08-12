@@ -2,10 +2,16 @@ const express = require("express");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
 const port = 3000;
 const app = express();
 
 dotenv.config();
+
+//database connection
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+    console.log("Successfully connected to mongo database")
+});
 
 //routes
 const userRoute = require("./routes/users");
