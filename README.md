@@ -11,7 +11,7 @@ The Retro Buddy is intended as a tool to aid the delivery of retrospective sessi
 •	Cypress for end-to-end testing.
 
 # Retro Buddy Kanban Board
-https://trello.com/b/syBMKwm3Quickstart
+https://comparethemarket.atlassian.net/secure/RapidBoard.jspa?rapidView=1104&selectedIssue=PKB-2
 
 # Start
 1.	Start the server
