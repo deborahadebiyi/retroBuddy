@@ -4,7 +4,7 @@
   "description": "Following are instructions on how to setup the Retro Buddy as well as user documentation. The Retro Buddy is intended as a tool to aid the delivery of retrospective sessions held fortnightly and encompasses the following features:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
     "start": "nodemon index.js"
   },
   "repository": {
@@ -18,11 +18,16 @@
   },
   "homepage": "https://github.com/deborahadebiyi/retroBuddy#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
     "mongoose": "^5.13.7",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.5"
   }
 }

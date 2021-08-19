@@ -9,16 +9,18 @@ const app = express();
 dotenv.config();
 
 //database connection
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true});
+mongoose.connection.on("connected", ()=>{
     console.log("Successfully connected to mongo database")
-});
-
+})
 //routes
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 
 //middleware
-app.use(express.json());
+app.use(express.json()); //used to extract data from body of requests
 app.use(helmet());
 app.use(morgan("common"));
 

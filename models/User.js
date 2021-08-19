@@ -6,7 +6,7 @@ const UserSchema = new mongoose.Schema({
         require: true,
         min: 4,
         max: 16,
-        unique: true
+        unique: [true, "Username already in use"]
     },
     displayname: {
         type: String,
@@ -17,21 +17,12 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         require: true,
-        min: 8
+        min: 8,
+        select: false
     },
     avatar: {
         type: String,
         default: ""
-    },
-    status: {
-        type: Boolean
-    },
-    isRetroLead: {
-        type: Boolean
-    },
-    moodCheck: {
-        type: Array,
-        default: []
     }
 })
 
