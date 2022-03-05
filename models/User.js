@@ -8,17 +8,11 @@ const UserSchema = new mongoose.Schema({
         max: 16,
         unique: [true, "Username already in use"]
     },
-    displayname: {
-        type: String,
-        require: true,
-        min: 4,
-        max: 40
-    },
     password: {
         type: String,
         require: true,
         min: 8,
-        select: false
+        select: true
     },
     avatar: {
         type: String,
